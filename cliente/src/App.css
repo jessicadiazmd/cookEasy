@@ -1,0 +1,314 @@
+/* ESTILOS GENERALES */
+
+body {
+  background-color: #faf9f6;
+  width: 100%;
+}
+
+.fondoVerde {
+  background-color: #faf9f6;
+}
+
+.rosa {
+  color: #d6beb7;
+}
+
+.negro {
+  color: #272727;
+}
+
+.mayor {
+  font-size: 40px;
+}
+
+.menor {
+  font-size: 20px;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.centrar {
+  text-align: center;
+}
+
+.outfit {
+  font-family: "Outfit", sans-serif;
+}
+
+.paddTop {
+  padding-top: 50px;
+}
+
+.sinLinea {
+  text-decoration: none;
+}
+
+.sinLinea:hover {
+  color: #272727;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* BARA MENÚ */
+nav {
+  width: 100%;
+  position: fixed;
+  height: 150px;
+  top: 0;
+  background-color: #faf9f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 80px;
+}
+
+/* TEXTOS DEL MENÚ */
+
+.logo {
+  color: #d6beb7;
+  text-decoration: none;
+}
+.logo:hover {
+  color: #272727;
+}
+
+/* CLASE PARA TODOS LOS DIVS DE ARRRIBA O PRIMEROS DIVS DE CASA PÁGINA PARA QUE NO QUEDEN DEBAJO DEL MENÚ */
+.top {
+  padding-top: 170px;
+}
+
+/* FOTO + TEXTO PÁGINA DE INICIO*/
+.inicio {
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+/* FOTO PÁGINA DE INICIO*/
+.inicio img {
+  float: right;
+  width: 350px;
+}
+
+/* TEXTO PÁGINA DE INICIO*/
+.textoInicio {
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+/* SECCION CATEGORIA PÁGINA DE INICIO*/
+
+.borde {
+  border: 1px solid #d6beb7;
+  border-radius: 5px;
+}
+.borde:hover {
+  background-color: #d6beb7;
+}
+
+.categorias {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.categorias h4 {
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+  color: #272727;
+}
+
+.cardCategoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.cardCategoria img {
+  width: 90%;
+}
+
+.pb {
+  padding-bottom: 30px;
+}
+
+/* EN PÁGINA INICIO BLOQUE INSTAGRAM*/
+.instagram h2 {
+  margin-top: 75px;
+  margin-bottom: 10px;
+}
+
+.instagram h3 {
+  font-size: 28px;
+  margin-top: 15px;
+}
+
+.galeriaInstagram {
+  margin-bottom: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.imgInstagram {
+  width: 300px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+/* RECETAS CUANDO YA HAS ELEGIDO CATEGORIAS*/
+
+.cardRecetario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.cardReceta {
+  padding: 10px;
+  width: 350px;
+  margin: 10px;
+}
+
+.cardReceta Link {
+  text-decoration: none;
+}
+
+/* LA RECETA*/
+.receta {
+  margin-right: 20px;
+  margin-left: 50px;
+}
+
+.receta img {
+  width: 100%;
+}
+
+.mRight25 {
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.marginRignt {
+  margin-right: 10px;
+}
+
+.volver {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.negroLink {
+  color: #272727;
+}
+.negroLink:hover {
+  color: #d6beb7;
+}
+
+/* FORMULARIO DE LOGIN Y REGISTRO EN PÁGINA MI CUENTA*/
+
+.miCuenta {
+  padding-top: 200px;
+  padding-bottom: 80px;
+  padding-left: 20%;
+  padding-right: 20%;
+  /* background-color: #ffffff71; */
+}
+
+/* TABS DE INICIO SESIÓN - REGISTRO*/
+
+.nav-tabs {
+  border-bottom: 1px solid #d6beb7;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link {
+  color: #272727;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #272727;
+  border-color: #d6beb7 #d6beb7;
+  font-weight: bold;
+  background-color: #faf9f6;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link:hover {
+  color: #d6beb7;
+  border-color: #d6beb7 #d6beb7;
+  background-color: #faf9f6;
+}
+
+.nav-link {
+  color: #d6beb7;
+}
+
+.nav-link:hover {
+  color: #d6beb7;
+}
+
+.formularioLogin {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.formularioLogin input {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* BOTON FORMULARIO INICIO SESIÓN - REGISTRO*/
+.botonLogin {
+  margin-top: 20px;
+  background-color: #d6beb7;
+  border: 1px solid #d6beb7;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  color: #faf9f6;
+  box-sizing: content-box;
+}
+.botonLogin:hover {
+  background-color: #faf9f6;
+  color: #d6beb7;
+  border: 1.75px solid #d6beb7;
+}
+
+.miCuenta input {
+  background-color: #d6beb71c;
+  border: 1px solid #d6beb7;
+}
+
+.miCuenta ::placeholder {
+  color: #272727;
+}
+
+/* FOOTER*/
+footer {
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .inicio img {
+    display: none;
+  }
+}
