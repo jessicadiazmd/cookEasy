@@ -9,6 +9,10 @@ body {
   background-color: #faf9f6;
 }
 
+.blanco {
+  color: #faf9f6;
+}
+
 .rosa {
   color: #d6beb7;
 }
@@ -52,6 +56,14 @@ body {
 .flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+.mtop10 {
+  margin-top: 10px;
+}
+
+.mbottom100 {
+  margin-bottom: 100px;
 }
 
 /* BARA MENÚ */
@@ -152,6 +164,7 @@ nav {
 .instagram h3 {
   font-size: 28px;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .galeriaInstagram {
@@ -174,8 +187,10 @@ nav {
 .cardRecetario {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 30px;
+  justify-content: space-around;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-bottom: 100px;
 }
 
 .cardReceta {
@@ -188,6 +203,10 @@ nav {
   text-decoration: none;
 }
 
+.cardReceta img {
+  width: 100%;
+}
+
 /* LA RECETA*/
 .receta {
   margin-right: 20px;
@@ -195,7 +214,7 @@ nav {
 }
 
 .receta img {
-  width: 100%;
+  width: 90%;
 }
 
 .mRight25 {
@@ -304,7 +323,8 @@ nav {
 
 /* FOOTER*/
 footer {
-  padding: 20px;
+  background-color: #d6beb7;
+  padding: 35px;
 }
 
 @media (max-width: 900px) {
