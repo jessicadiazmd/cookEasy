@@ -14,6 +14,32 @@ import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 function Recetas(props) {
   /* RECETA COMPLETA EN UNA SOLA PÁGINA*/
   if (props.full) {
+    let mostrarPasos = props.pasos.map((paso) => {
+      return (
+        <div className="pasos">
+          <p className="rosa bold mright10">{paso.orden}</p>
+          <p>{paso.paso}</p>
+        </div>
+      );
+    });
+
+    let ingredientes = props.ingredientes.map((ingrediente) => {
+      return (
+        <>
+          <p className="mright20">{ingrediente.ingrediente}</p>
+        </>
+      );
+    });
+
+    let mostrarIngredientes = props.ingredientes.map((ingrediente) => {
+      return (
+        <div className="pasos">
+          <p className="bold mright10">{ingrediente.ingrediente}:</p>
+          <p>{ingrediente.cantidad}</p>
+        </div>
+      );
+    });
+
     return (
       <>
         {/* link para volver al listado de recetas según categoria */}
@@ -59,26 +85,17 @@ function Recetas(props) {
           >
             {/* ingredientes*/}
             <Tab
-              className="widthLinea mbottom100"
+              className="widthLinea tabReceta"
               eventKey="login"
               title="Ingredientes"
             >
-              {/* <p>
-            Ingredientes:
-            <ul>
-              {props.ingredientes.map((ingrediente) => {
-                return <li>{ingrediente}</li>;
-              })}
-            </ul>
-          </p> */}
+              <div className="ingredientes ">{ingredientes}</div>
+              <div>{mostrarIngredientes}</div>
             </Tab>
 
             {/* pasos */}
-            <Tab className=" mbottom100" eventKey="Register" title="Pasos">
-              <p>Pasos: {props.pasos.paso1}</p>
-              <p>Pasos: {props.pasos.paso2}</p>
-              <p>Pasos: {props.pasos.paso3}</p>
-              <p>Pasos: {props.pasos.paso4}</p>
+            <Tab className=" tabReceta" eventKey="Register" title="Pasos">
+              <div>{mostrarPasos}</div>
             </Tab>
           </Tabs>
         </div>

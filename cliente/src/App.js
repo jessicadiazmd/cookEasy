@@ -65,7 +65,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/recetas/calorias")
+    fetch("http://localhost:3001/recetas/singluten")
       .then((res) => res.json())
       .then((data) => {
         setCategoria5(data.results);
@@ -73,7 +73,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/recetas/proteinas")
+    fetch("http://localhost:3001/recetas/asiatico")
       .then((res) => res.json())
       .then((data) => {
         setCategoria6(data.results);
@@ -138,7 +138,7 @@ function App() {
             element={<Recetario data={categoria4} />}
           />
           <Route
-            path="/recetas/proteinas"
+            path="/recetas/asiatico"
             element={<Recetario data={categoria6} />}
           />
           <Route
@@ -150,7 +150,7 @@ function App() {
             element={<Recetario data={categoria8} />}
           />
           <Route
-            path="/recetas/calorias"
+            path="/recetas/singluten"
             element={<Recetario data={categoria5} />}
           />
           <Route path="/cuenta" element={<Micuenta />} />

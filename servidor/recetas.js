@@ -66,11 +66,11 @@ router.get("/vegetariano", (req, res) => {
     });
 });
 
-//Ruta /recetas/calorias ofrece un listado de recetas de esa categoria
-router.get("/calorias", (req, res) => {
+//Ruta /recetas/singluten ofrece un listado de recetas de esa categoria
+router.get("/singluten", (req, res) => {
   req.app.locals.db
     .collection("Recetas")
-    .find({ categoria: "calorias" })
+    .find({ categoria: "singluten" })
     .toArray((err, data) => {
       err
         ? (console.log(err),
@@ -79,11 +79,11 @@ router.get("/calorias", (req, res) => {
     });
 });
 
-//Ruta /recetas/proteinas ofrece un listado de recetas de esa categoria
-router.get("/proteinas", (req, res) => {
+//Ruta /recetas/asiatico ofrece un listado de recetas de esa categoria
+router.get("/asiatico", (req, res) => {
   req.app.locals.db
     .collection("Recetas")
-    .find({ categoria: "proteinas" })
+    .find({ categoria: "asiatico" })
     .toArray((err, data) => {
       err
         ? (console.log(err),

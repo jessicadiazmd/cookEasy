@@ -20,6 +20,9 @@ body {
 .negro {
   color: #272727;
 }
+.bold {
+  font-weight: bold;
+}
 
 .mayor {
   font-size: 40px;
@@ -62,8 +65,12 @@ body {
   margin-top: 10px;
 }
 
-.mbottom100 {
-  margin-bottom: 100px;
+.mright10 {
+  margin-right: 10px;
+}
+
+.mright20 {
+  margin-right: 20px;
 }
 
 /* BARA MENÚ */
@@ -180,6 +187,7 @@ nav {
   width: 300px;
   padding: 5px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 /* RECETAS CUANDO YA HAS ELEGIDO CATEGORIAS*/
@@ -187,9 +195,9 @@ nav {
 .cardRecetario {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin-right: 30px;
-  margin-left: 30px;
+  justify-content: space-between;
+  margin-right: 50px;
+  margin-left: 50px;
   margin-bottom: 100px;
 }
 
@@ -237,6 +245,37 @@ nav {
 }
 .negroLink:hover {
   color: #d6beb7;
+}
+
+.pasos {
+  display: flex;
+  margin-left: 20px;
+}
+
+.tabReceta {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  width: 80%;
+}
+.ingredientes {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  border: 1px solid #d6beb7;
+  background-color: #d6beb7;
+  color: #faf9f6;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+}
+
+.circulo {
+  margin-top: 8px;
+  font-size: 10px;
 }
 
 /* FORMULARIO DE LOGIN Y REGISTRO EN PÁGINA MI CUENTA*/

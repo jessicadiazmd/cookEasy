@@ -7,7 +7,8 @@ import img from "../img/5ingredientes.jpg";
 import img1 from "../img/20minutos.jpg";
 import img2 from "../img/postre.jpg";
 import img3 from "../img/vegetaiano.jpg";
-import img4 from "../img/bajoCalorias.jpg";
+import img4 from "../img/singluten.jpg";
+import img5 from "../img/asiatico.jpg";
 import img6 from "../img/mexicano.jpg";
 import img7 from "../img/italiano.jpg";
 
@@ -48,11 +49,11 @@ function Categorias() {
         </Col>
         <Col xl={3} l={3} md={6} s={12}>
           <Link
-            to="/recetas/calorias"
+            to="/recetas/singluten"
             className="logo playfair mayor cardCategoria borde pb"
           >
-            <img src={img4} alt="Icono de la categoría bajo en calorias" />
-            <h4>Bajo en calorias</h4>
+            <img src={img4} alt="Icono de la categoría sin gluten" />
+            <h4>Sin gluten</h4>
           </Link>
         </Col>
       </Row>
@@ -71,11 +72,11 @@ function Categorias() {
 
         <Col xl={3} l={3} md={6} s={12}>
           <Link
-            to="/recetas/proteinas"
+            to="/recetas/asiatico"
             className="logo playfair mayor cardCategoria borde pb"
           >
-            <img src={img2} alt="Icono de la categoría alto en proteinas" />
-            <h4>Alto en proteinas</h4>
+            <img src={img5} alt="Icono de la categoría comida asiatica" />
+            <h4>Asiático</h4>
           </Link>
         </Col>
         <Col xl={3} l={3} md={6} s={12}>
