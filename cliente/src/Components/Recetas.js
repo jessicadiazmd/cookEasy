@@ -111,6 +111,16 @@ function Recetas(props) {
         >
           <img src={props.img} alt={props.nombre} />
           <h1 className="menor playfair mtop10">{props.nombre}</h1>
+          <div className="flex negro">
+            <p className="mRight25">
+              <FontAwesomeIcon className="negro" icon={faClock} />{" "}
+              {props.tiempo} minutos
+            </p>
+            <p className="mRight25">
+              <FontAwesomeIcon className="negro" icon={faSignal} />{" "}
+              {props.dificultad} dificultad
+            </p>
+          </div>
         </Link>
       </div>
     );

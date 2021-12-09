@@ -44,7 +44,7 @@ router.get("/20minutos", (req, res) => {
 router.get("/postres", (req, res) => {
   req.app.locals.db
     .collection("Recetas")
-    .find({ categoria: "postres" })
+    .find({ categoria: "postre" })
     .toArray((err, data) => {
       err
         ? (console.log(err),

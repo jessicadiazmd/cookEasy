@@ -132,7 +132,10 @@ function App() {
             path="/recetas/20minutos"
             element={<Recetario data={categoria2} />}
           />
-          <Route path="/postres" element={<Recetario data={categoria3} />} />
+          <Route
+            path="recetas/postres"
+            element={<Recetario titulo={"postres"} data={categoria3} />}
+          />
           <Route
             path="/recetas/vegetariano"
             element={<Recetario data={categoria4} />}

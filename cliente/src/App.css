@@ -195,7 +195,7 @@ nav {
 .cardRecetario {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-right: 50px;
   margin-left: 50px;
   margin-bottom: 100px;
@@ -222,7 +222,7 @@ nav {
 }
 
 .receta img {
-  width: 90%;
+  width: 100%;
 }
 
 .mRight25 {
