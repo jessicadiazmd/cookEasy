@@ -97,6 +97,14 @@ function Categorias() {
             <h4>Italiano</h4>
           </Link>
         </Col>
+        <Col xl={12} l={12} md={12} s={12}>
+          <Link
+            to="/recetas/"
+            className="logo playfair mayor todaCategoria borde "
+          >
+            <h4>Ver todas las recetas</h4>
+          </Link>
+        </Col>
       </Row>
     </div>
   );

@@ -2,53 +2,42 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
 import { useState } from "react";
+import Axios from "axios";
 
 function Micuenta() {
   //ESTADOS
-  const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
-  const [nombreNuevo, setNombreNuevo] = useState("");
-  const [emailNuevo, setEmailNuevo] = useState("");
   const [contraseña, setContraseña] = useState("");
-  const [contraseña2, setContraseña2] = useState("");
+  const [email, setEmail] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [emailNuevo, setEmailNuevo] = useState("");
+  const [contraseñaNueva, setContraseñaNueva] = useState("");
+  const [contraseñaNueva2, setContraseñaNueva2] = useState("");
 
-  /*   //REGISTRARSE
-  function registro() {
-    let nuevoCliente = {
-      nombre: document.getElementById("nombre").value,
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
-    };
-
-    if (
-      //las contraseñas coinciden
-      document.getElementById("password").value ===
-      document.getElementById("secondpassword").value
-    ) {
-      fetch("/cuenta/registro", {
-        method: "POST",
-        body: JSON.stringify(nuevoCliente),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.altaOK == true) {
-            document.getElementById("clientesRegistro").innerHTML = " ";
-            document.getElementById("clientesRegistro").style.display = "none";
-          } else {
-            document.getElementById("errorContraseña").innerHTML = data.mensaje;
-          }
-        });
-    } else {
-      //las contraseñas no coinciden
-
-      document.getElementById(
-        "errorContraseña"
-      ).innerHTML = `<p class="falloRegistro">Las contraseñas no coinciden</p>`;
-    }
-  } */
+  function registrar() {
+    Axios({
+      method: "POST",
+      data: {
+        nombre: nombre,
+        email: emailNuevo,
+        password: contraseñaNueva,
+      },
+      withCredentials: true,
+      url: "http://localhost:3001//signup",
+    }).then((res) => {
+      console.log(res.data);
+      /* if (res.data.logged) {
+        setLogged(res.data.logged);
+        setUser(res.data.user);
+        setVariante("success");
+        setMensaje(res.data.mensaje);
+      } else {
+        setLogged(res.data.logged);
+        setUser(null);
+        setVariante("danger");
+        setMensaje(res.data.mensaje);
+      } */
+    });
+  }
 
   return (
     <div className=" top miCuenta fondoVerde">
@@ -61,18 +50,18 @@ function Micuenta() {
         <Tab eventKey="login" title="Iniciar sesión">
           <form className="formularioLogin">
             <input
-              type="text"
-              placeholder="Nombre"
-              onChange={(e) => setNombre(e.target.value)}
-              value={nombre}
-            />
-            <input
               type="email"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            <button id="botonLogin" className="botonLogin" onclick="">
+            <input
+              type="password"
+              placeholder="Contraseña"
+              onChange={(e) => setContraseña(e.target.value)}
+              value={contraseña}
+            />
+            <button id="botonLogin" className="botonLogin">
               Iniciar sesión
             </button>
           </form>
@@ -82,8 +71,8 @@ function Micuenta() {
             <input
               type="text"
               placeholder="Nombre"
-              onChange={(e) => setNombreNuevo(e.target.value)}
-              value={nombreNuevo}
+              onChange={(e) => setNombre(e.target.value)}
+              value={nombre}
             />
             <input
               type="text"
@@ -94,21 +83,21 @@ function Micuenta() {
             <input
               type="password"
               placeholder="Contraseña"
-              onChange={(e) => setContraseña(e.target.value)}
-              value={contraseña}
+              onChange={(e) => setContraseñaNueva(e.target.value)}
+              value={contraseñaNueva}
             />
 
             <input
               type="password"
               placeholder="Repite la contraseña"
-              onChange={(e) => setContraseña2(e.target.value)}
-              value={contraseña2}
+              onChange={(e) => setContraseñaNueva2(e.target.value)}
+              value={contraseñaNueva2}
             />
 
             <button
               id="botonRegistrar"
               className="botonLogin"
-              onclick="registro()"
+              onClick={() => registrar()}
             >
               Registrarme
             </button>

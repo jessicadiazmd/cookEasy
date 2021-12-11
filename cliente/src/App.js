@@ -25,7 +25,7 @@ function App() {
   //Fetch para la Info de la bbdd - recetas (general y por categorias)
 
   useEffect(() => {
-    fetch("http://localhost:3001/recetas/listado")
+    fetch("http://localhost:3001/recetas/")
       .then((res) => res.json())
       .then((data) => {
         setRecetas(data.results);
@@ -124,6 +124,7 @@ function App() {
         <Cabecera />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/recetas/" element={<Recetario data={recetas} />} />
           <Route
             path="/recetas/5ingredientes"
             element={<Recetario data={categoria1} />}
