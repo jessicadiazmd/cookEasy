@@ -23,7 +23,7 @@ router.get("/5ingredientes", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -36,7 +36,7 @@ router.get("/20minutos", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -49,7 +49,7 @@ router.get("/postres", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -62,7 +62,7 @@ router.get("/vegetariano", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -75,7 +75,7 @@ router.get("/singluten", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -88,7 +88,7 @@ router.get("/asiatico", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -101,7 +101,7 @@ router.get("/mexicano", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 
@@ -114,7 +114,7 @@ router.get("/italiano", (req, res) => {
       err
         ? (console.log(err),
           res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : (console.log(data), res.send({ results: data }));
+        : res.send({ results: data });
     });
 });
 

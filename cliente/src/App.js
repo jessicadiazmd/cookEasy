@@ -21,6 +21,9 @@ function App() {
   const [categoria6, setCategoria6] = useState([]);
   const [categoria7, setCategoria7] = useState([]);
   const [categoria8, setCategoria8] = useState([]);
+  const [user, setUser] = useState(null);
+  const [logged, setLogged] = useState(false);
+  //const [mensaje, setMensaje] = useState(null);
 
   //Fetch para la Info de la bbdd - recetas (general y por categorias)
 
@@ -157,7 +160,18 @@ function App() {
             path="/recetas/singluten"
             element={<Recetario data={categoria5} />}
           />
-          <Route path="/cuenta" element={<Micuenta />} />
+          <Route
+            path="/cuenta"
+            element={
+              <Micuenta
+                user={user}
+                setUser={setUser}
+                logged={logged}
+                setLogged={setLogged}
+                // setMensaje={setMensaje}
+              />
+            }
+          />
           {rutas}
         </Routes>
       </BrowserRouter>

@@ -4,38 +4,28 @@ import Tab from "react-bootstrap/Tab";
 import { useState } from "react";
 import Axios from "axios";
 
-function Micuenta() {
+function Micuenta({ user, setUser, logged, setLogged, setMensaje }) {
   //ESTADOS
   const [contraseña, setContraseña] = useState("");
   const [email, setEmail] = useState("");
   const [nombre, setNombre] = useState("");
-  const [emailNuevo, setEmailNuevo] = useState("");
-  const [contraseñaNueva, setContraseñaNueva] = useState("");
-  const [contraseñaNueva2, setContraseñaNueva2] = useState("");
+  const [emailRegistro, setEmailRegistro] = useState("");
+  const [contraseñaRegistro, setContraseñaRegistro] = useState("");
+  const [contraseñaRegistro2, setContraseñaRegistro2] = useState("");
 
   function registrar() {
     Axios({
       method: "POST",
       data: {
         nombre: nombre,
-        email: emailNuevo,
-        password: contraseñaNueva,
+        email: emailRegistro,
+        password: contraseñaRegistro,
       },
       withCredentials: true,
-      url: "http://localhost:3001//signup",
+      url: "http://localhost:3001/signup",
     }).then((res) => {
+      console.log("eco");
       console.log(res.data);
-      /* if (res.data.logged) {
-        setLogged(res.data.logged);
-        setUser(res.data.user);
-        setVariante("success");
-        setMensaje(res.data.mensaje);
-      } else {
-        setLogged(res.data.logged);
-        setUser(null);
-        setVariante("danger");
-        setMensaje(res.data.mensaje);
-      } */
     });
   }
 
@@ -52,16 +42,20 @@ function Micuenta() {
             <input
               type="email"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
               value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               placeholder="Contraseña"
-              onChange={(e) => setContraseña(e.target.value)}
               value={contraseña}
+              onChange={(e) => setContraseña(e.target.value)}
             />
-            <button id="botonLogin" className="botonLogin">
+            <button
+              id="botonLogin"
+              className="botonLogin"
+              /* onClick={() => login()} */
+            >
               Iniciar sesión
             </button>
           </form>
@@ -77,27 +71,27 @@ function Micuenta() {
             <input
               type="text"
               placeholder="Email"
-              onChange={(e) => setEmailNuevo(e.target.value)}
-              value={emailNuevo}
+              onChange={(e) => setEmailRegistro(e.target.value)}
+              value={emailRegistro}
             />
             <input
               type="password"
               placeholder="Contraseña"
-              onChange={(e) => setContraseñaNueva(e.target.value)}
-              value={contraseñaNueva}
+              onChange={(e) => setContraseñaRegistro(e.target.value)}
+              value={contraseñaRegistro}
             />
 
             <input
               type="password"
               placeholder="Repite la contraseña"
-              onChange={(e) => setContraseñaNueva2(e.target.value)}
-              value={contraseñaNueva2}
+              onChange={(e) => setContraseñaRegistro2(e.target.value)}
+              value={contraseñaRegistro2}
             />
 
             <button
               id="botonRegistrar"
               className="botonLogin"
-              onClick={() => registrar()}
+              onClick={registrar}
             >
               Registrarme
             </button>

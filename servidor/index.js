@@ -178,6 +178,7 @@ app.post("/logout", (req, res) => {
 //--------------- registrarse -------------------
 
 app.post("/signup", (req, res) => {
+  console.log(req.body);
   req.app.locals.db
     .collection("usuarios")
     .find({ email: req.body.email })
