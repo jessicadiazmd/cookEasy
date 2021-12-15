@@ -13,17 +13,18 @@ import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Recetas(props) {
   /* RECETA COMPLETA EN UNA SOLA PÁGINA*/
+  console.log(props);
   if (props.full) {
-    let mostrarPasos = props.pasos.map((paso) => {
+    /* let mostrarPasos = props.pasos.map((paso) => {
       return (
         <div className="pasos">
           <p className="rosa bold mright10">{paso.orden}</p>
           <p>{paso.paso}</p>
         </div>
       );
-    });
+    }); */
 
-    let ingredientes = props.ingredientes.map((ingrediente) => {
+    /* let ingredientes = props.ingredientes.map((ingrediente) => {
       return (
         <>
           <p className="mright20">{ingrediente.ingrediente}</p>
@@ -38,7 +39,7 @@ function Recetas(props) {
           <p>{ingrediente.cantidad}</p>
         </div>
       );
-    });
+    }); */
 
     return (
       <>
@@ -89,13 +90,41 @@ function Recetas(props) {
               eventKey="login"
               title="Ingredientes"
             >
-              <div className="ingredientes ">{ingredientes}</div>
-              <div>{mostrarIngredientes}</div>
+              <div className="ingredientes ">
+                {props.ingredientes.map((ingrediente) => {
+                  return (
+                    <>
+                      <p className="mright20">{ingrediente.ingrediente}</p>
+                    </>
+                  );
+                })}
+              </div>
+              <div>
+                {props.ingredientes.map((ingrediente) => {
+                  return (
+                    <div className="pasos">
+                      <p className="bold mright10">
+                        {ingrediente.ingrediente}:
+                      </p>
+                      <p>{ingrediente.cantidad}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </Tab>
 
             {/* pasos */}
             <Tab className=" tabReceta" eventKey="Register" title="Pasos">
-              <div>{mostrarPasos}</div>
+              <div>
+                {props.pasos.map((paso) => {
+                  return (
+                    <div className="pasos">
+                      <p className="rosa bold mright10">{paso.orden}</p>
+                      <p>{paso.paso}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </Tab>
           </Tabs>
         </div>
@@ -107,7 +136,12 @@ function Recetas(props) {
       <div className="cardReceta borde " key={props.index}>
         <Link
           className="sinLinea negro"
-          to={"/" + props.nombre.replace(/ |[áéíóú]/g, "-")}
+          to={
+            "/recetas/" +
+            props.categoria +
+            "/" +
+            props.nombre.replace(/ |[áéíóú]/g, "-")
+          }
         >
           <img src={props.img} alt={props.nombre} />
           <h1 className="menor playfair mtop10">{props.nombre}</h1>

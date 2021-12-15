@@ -20,7 +20,7 @@ function Recetario() {
           return (
             <Recetas
               key={index}
-              full={false}
+              full={true}
               img={receta.img}
               nombre={receta.nombre}
               dificultad={receta.dificultad}

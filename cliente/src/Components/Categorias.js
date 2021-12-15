@@ -99,7 +99,7 @@ function Categorias() {
         </Col>
         <Col xl={12} l={12} md={12} s={12}>
           <Link
-            to="/recetas/"
+            to="/recetas/todas"
             className="logo playfair mayor todaCategoria borde "
           >
             <h4>Ver todas las recetas</h4>
