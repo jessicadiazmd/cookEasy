@@ -217,7 +217,7 @@ nav {
 }
 
 .galeriaInstagram {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   padding-left: 25px;
   padding-right: 25px;
   display: flex;
@@ -232,6 +232,17 @@ nav {
   cursor: pointer;
 }
 
+.botonTop {
+  border: none;
+  background-color: #faf9f6;
+  margin-left: 90%;
+  margin-bottom: 50px;
+  bottom: 50px;
+}
+
+.arrow {
+  font-size: 50px;
+}
 /* RECETAS CUANDO YA HAS ELEGIDO CATEGORIAS*/
 
 .cardRecetario {
