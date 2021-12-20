@@ -73,7 +73,7 @@ body {
   margin-right: 20px;
 }
 
-/* BARA MENÚ */
+/* ---------- BARA MENÚ/cabecera ---------*/
 nav {
   width: 100%;
   position: fixed;
@@ -99,6 +99,8 @@ nav {
   color: #272727;
 }
 
+/* ---------- BARA MENÚ/cabecera ---------*/
+
 /* CLASE PARA TODOS LOS DIVS DE ARRRIBA O PRIMEROS DIVS DE CASA PÁGINA PARA QUE NO QUEDEN DEBAJO DEL MENÚ */
 .top {
   padding-top: 150px;
@@ -107,6 +109,8 @@ nav {
 .top2 {
   padding-top: 200px;
 }
+
+/* ---------- COMPONENTE HOME/COMPONENTE PRESENTACIÓN ---------*/
 
 /* FOTO + TEXTO PÁGINA DE INICIO*/
 .inicio {
@@ -127,6 +131,12 @@ nav {
   margin-right: 15px;
 }
 
+/* INTERLINEADO MENOR DE LAS TRES PRIMERAS FRASES*/
+.interlineado {
+  line-height: 48px;
+}
+
+/* buscador*/
 .buscador {
   display: flex;
   justify-content: space-between;
@@ -157,16 +167,9 @@ nav {
   color: #faf9f6;
 }
 
-/* SECCION CATEGORIA PÁGINA DE INICIO*/
+/* ---------- COMPONENTE HOME/COMPONENTE PRESENTACIÓN ---------*/
 
-.borde {
-  border: 1px solid #d6beb7;
-  border-radius: 5px;
-}
-.borde:hover {
-  background-color: #d6beb7;
-}
-
+/* CADA FILA DE CATEGORÍA*/
 .categorias {
   margin-right: 50px;
   margin-left: 50px;
@@ -179,6 +182,7 @@ nav {
   color: #272727;
 }
 
+/* CADA CATEGORÍA*/
 .cardCategoria {
   display: flex;
   flex-direction: column;
@@ -188,6 +192,19 @@ nav {
   padding-bottom: 10px;
 }
 
+.borde {
+  border: 1px solid #d6beb7;
+  border-radius: 5px;
+}
+.borde:hover {
+  background-color: #d6beb7;
+}
+
+.cardCategoria img {
+  width: 90%;
+}
+
+/* BOTON TODAS LAS RECETAS*/
 .todaCategoria {
   display: flex;
   justify-content: center;
@@ -196,15 +213,12 @@ nav {
   padding-bottom: 10px;
 }
 
-.cardCategoria img {
-  width: 90%;
-}
-
 .pb {
   padding-bottom: 30px;
 }
 
-/* EN PÁGINA INICIO BLOQUE INSTAGRAM*/
+/* ---------- COMPONENTE HOME/COMPONENTE INSTAGRAM---------*/
+
 .instagram h2 {
   margin-top: 50px;
   margin-bottom: 10px;
@@ -232,6 +246,7 @@ nav {
   cursor: pointer;
 }
 
+/* ---------- COMPONENTE HOME - FECHA TO TOP ---------*/
 .botonTop {
   border: none;
   background-color: #faf9f6;
@@ -243,7 +258,9 @@ nav {
 .arrow {
   font-size: 50px;
 }
-/* RECETAS CUANDO YA HAS ELEGIDO CATEGORIAS*/
+
+/* ---------- COMPONENTE RECETARIO ---------*/
+/* LISTADO RECETAS SEGÚN LA CATEGORIA ELEGIDA*/
 
 .cardRecetario {
   display: flex;
@@ -254,6 +271,8 @@ nav {
   margin-bottom: 100px;
 }
 
+/* ---------- COMPONENTE RECETAS ---------*/
+/* CADA RECETA EN EL LISTADO SEGÚN CATEGORÍA ELEGIDA */
 .cardReceta {
   padding: 10px;
   width: 350px;
@@ -268,7 +287,7 @@ nav {
   width: 100%;
 }
 
-/* LA RECETA*/
+/* VISUALIZACIÓN COMPLETA DE LA RECETA ELEGIDA*/
 .receta {
   margin-right: 20px;
   margin-left: 50px;
@@ -288,16 +307,11 @@ nav {
   margin-right: 10px;
 }
 
-.volver {
-  margin-left: 50px;
-  margin-bottom: 50px;
-}
-
-.negroLink {
-  color: #272727;
-}
-.negroLink:hover {
-  color: #d6beb7;
+/* TAB QUE SEPARA PASOS E INGREDIENTES*/
+.tabReceta {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  width: 80%;
 }
 
 .pasos {
@@ -305,11 +319,6 @@ nav {
   margin-left: 20px;
 }
 
-.tabReceta {
-  margin-top: 30px;
-  margin-bottom: 100px;
-  width: 80%;
-}
 .ingredientes {
   display: flex;
   flex-wrap: wrap;
@@ -331,6 +340,20 @@ nav {
   font-size: 10px;
 }
 
+/* LINK VOLEVER A LISTADO SEGÚN CATEGORIA*/
+.volver {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.negroLink {
+  color: #272727;
+}
+.negroLink:hover {
+  color: #d6beb7;
+}
+
+/* ---------- COMPONENTE MICUENTA ---------*/
 /* FORMULARIO DE LOGIN Y REGISTRO EN PÁGINA MI CUENTA*/
 
 .miCuenta {
@@ -375,6 +398,8 @@ nav {
   color: #d6beb7;
 }
 
+/* FORMULARIOS INICIO SESIÓN - REGISTRO*/
+
 .formularioLogin {
   display: flex;
   flex-direction: column;
@@ -386,6 +411,15 @@ nav {
   margin-top: 20px;
   padding: 15px;
   border-radius: 5px;
+}
+
+.miCuenta input {
+  background-color: #d6beb71c;
+  border: 1px solid #d6beb7;
+}
+
+.miCuenta ::placeholder {
+  color: #272727;
 }
 
 /* BOTON FORMULARIO INICIO SESIÓN - REGISTRO*/
@@ -404,19 +438,62 @@ nav {
   border: 1.75px solid #d6beb7;
 }
 
-.miCuenta input {
-  background-color: #d6beb71c;
-  border: 1px solid #d6beb7;
+.areaUsuario {
+  padding-bottom: 100px;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
-.miCuenta ::placeholder {
-  color: #272727;
+.tabArea {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.modificarDatos {
+  margin-top: 30px;
+  text-decoration: underline;
+}
+
+.inputModificar {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  height: 40px;
+  border: 1px solid #d6beb7;
+  background-color: #faf9f6;
+  width: 300px;
+}
+
+.botonmodificar {
+  margin-top: 20px;
+  background-color: #d6beb7;
+  border: 1px solid #d6beb7;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  color: #faf9f6;
+  box-sizing: content-box;
+  height: 27px;
+}
+.botonmodificar:hover {
+  background-color: #faf9f6;
+  color: #d6beb7;
+  border: 1.75px solid #d6beb7;
 }
 
 /* FOOTER*/
 footer {
+  display: flex;
+  justify-content: space-between;
   background-color: #d6beb7;
-  padding: 35px;
+  padding-top: 35px;
+  padding-left: 50px;
+  padding-right: 75px;
+  padding-bottom: 20px;
+}
+
+footer img {
+  cursor: pointer;
+  width: 75px;
 }
 
 @media (max-width: 900px) {

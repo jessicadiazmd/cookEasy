@@ -15,16 +15,16 @@ function Recetas(props) {
   /* RECETA COMPLETA EN UNA SOLA PÁGINA*/
   console.log(props);
   if (props.full) {
-    /* let mostrarPasos = props.pasos.map((paso) => {
+    let mostrarPasos = props.pasos.map((paso) => {
       return (
         <div className="pasos">
           <p className="rosa bold mright10">{paso.orden}</p>
           <p>{paso.paso}</p>
         </div>
       );
-    }); */
+    });
 
-    /* let ingredientes = props.ingredientes.map((ingrediente) => {
+    let ingredientes = props.ingredientes.map((ingrediente) => {
       return (
         <>
           <p className="mright20">{ingrediente.ingrediente}</p>
@@ -39,7 +39,7 @@ function Recetas(props) {
           <p>{ingrediente.cantidad}</p>
         </div>
       );
-    }); */
+    });
 
     return (
       <>
@@ -90,41 +90,13 @@ function Recetas(props) {
               eventKey="login"
               title="Ingredientes"
             >
-              <div className="ingredientes ">
-                {props.ingredientes.map((ingrediente) => {
-                  return (
-                    <>
-                      <p className="mright20">{ingrediente.ingrediente}</p>
-                    </>
-                  );
-                })}
-              </div>
-              <div>
-                {props.ingredientes.map((ingrediente) => {
-                  return (
-                    <div className="pasos">
-                      <p className="bold mright10">
-                        {ingrediente.ingrediente}:
-                      </p>
-                      <p>{ingrediente.cantidad}</p>
-                    </div>
-                  );
-                })}
-              </div>
+              <div className="ingredientes ">{ingredientes}</div>
+              <div>{mostrarIngredientes}</div>
             </Tab>
 
             {/* pasos */}
             <Tab className=" tabReceta" eventKey="Register" title="Pasos">
-              <div>
-                {props.pasos.map((paso) => {
-                  return (
-                    <div className="pasos">
-                      <p className="rosa bold mright10">{paso.orden}</p>
-                      <p>{paso.paso}</p>
-                    </div>
-                  );
-                })}
-              </div>
+              <div>{mostrarPasos}</div>
             </Tab>
           </Tabs>
         </div>
@@ -140,7 +112,7 @@ function Recetas(props) {
             "/recetas/" +
             props.categoria +
             "/" +
-            props.nombre.replace(/ |[áéíóú]/g, "-")
+            props.nombre /* .replace(/ |[áéíóú]/g, "-") */
           }
         >
           <img src={props.img} alt={props.nombre} />

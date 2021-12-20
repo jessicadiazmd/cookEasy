@@ -4,7 +4,14 @@ import Tab from "react-bootstrap/Tab";
 import { useState } from "react";
 import Axios from "axios";
 
-function Micuenta({ user, setUser, logged, setLogged, setMensaje }) {
+function Micuenta({
+  user,
+  setUser,
+  logged,
+  setLogged,
+  setVariante,
+  setMensaje,
+}) {
   //ESTADOS
   const [contraseña, setContraseña] = useState("");
   const [email, setEmail] = useState("");
@@ -26,6 +33,31 @@ function Micuenta({ user, setUser, logged, setLogged, setMensaje }) {
     }).then((res) => {
       console.log("eco");
       console.log(res.data);
+    });
+  }
+
+  function login() {
+    Axios({
+      method: "POST",
+      data: {
+        email: email,
+        password: contraseña,
+      },
+      withCredentials: true,
+      url: "http://localhost:3001/login",
+    }).then((res) => {
+      console.log(res.data);
+      if (res.data.logged) {
+        setLogged(res.data.logged);
+        setUser(res.data.user);
+        setVariante("success");
+        setMensaje(res.data.mensaje);
+      } else {
+        setLogged(res.data.logged);
+        setUser(null);
+        setVariante("danger");
+        setMensaje(res.data.mensaje);
+      }
     });
   }
 
@@ -51,11 +83,7 @@ function Micuenta({ user, setUser, logged, setLogged, setMensaje }) {
               value={contraseña}
               onChange={(e) => setContraseña(e.target.value)}
             />
-            <button
-              id="botonLogin"
-              className="botonLogin"
-              /* onClick={() => login()} */
-            >
+            <button id="botonLogin" className="botonLogin" onClick={login}>
               Iniciar sesión
             </button>
           </form>

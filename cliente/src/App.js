@@ -1,22 +1,38 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState /* useEffect  */ } from "react";
+import { useState, useEffect } from "react";
 
 //Components Import
 import Cabecera from "./Components/Cabecera";
 import Home from "./Components/Home";
 import Recetario from "./Components/Recetario";
 import RecetarioB from "./Components/RecetarioB";
+import Recetas from "./Components/Recetas";
 import Micuenta from "./Components/Micuenta";
+import Usuario from "./Components/Usuario";
 import Footer from "./Components/Footer";
+
+/* import { Logout } from "./Logout";
+import { Feedback } from "./Feedback"; */
 
 function App() {
   //Estados
   const [user, setUser] = useState(null);
   const [logged, setLogged] = useState(false);
-  //const [mensaje, setMensaje] = useState(null);
+  const [variante, setVariante] = useState("");
+  const [mensaje, setMensaje] = useState(null);
 
-  /* const rutas = recetas.map((receta, index) => {
+  const [recetas, setRecetas] = useState([]);
+
+  /* useEffect(() => {
+    fetch(`http://localhost:3001/recetas/todas`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRecetas(data.results);
+      });
+  });
+
+  const rutas = recetas.map((receta, index) => {
     return (
       <Route
         path={"/" + receta.nombre.replace(/ |[áéíóú]/g, "-")}
@@ -36,8 +52,8 @@ function App() {
         }
       />
     );
-  }); */
-
+  });
+ */
   return (
     <>
       <BrowserRouter>
@@ -61,13 +77,17 @@ function App() {
                 setUser={setUser}
                 logged={logged}
                 setLogged={setLogged}
-                // setMensaje={setMensaje}
+                setVariante={setVariante}
+                setMensaje={setMensaje}
               />
             }
           />
-          {/* {rutas} */}
+
+          <Route path="/area_usuario" element={<Usuario />} />
+          {/*  {rutas} */}
         </Routes>
       </BrowserRouter>
+      {/* <Feedback variante={variante} mensaje={mensaje} /> */}
       <Footer />
     </>
   );

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-//Ruta /recetas/listado ofrece un listado de TODAS las recetas
+//Ruta /recetas/todas ofrece un listado de TODAS las recetas
 router.get("/todas", (req, res) => {
   req.app.locals.db
     .collection("Recetas")
