@@ -11,7 +11,7 @@ function Recetario() {
       .then((data) => {
         setCategoria(data.results);
       });
-  });
+  }, []);
 
   return (
     <>

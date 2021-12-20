@@ -14,11 +14,10 @@ router.get("/todas", (req, res) => {
     });
 });
 
-//Ruta /recetas/5_ingredientes ofrece un listado de recetas de esa categoria
-router.get("/5ingredientes", (req, res) => {
+router.get("/:categoria", (req, res) => {
   req.app.locals.db
     .collection("Recetas")
-    .find({ categoria: "5ingredientes" })
+    .find({ categoria: req.params.categoria })
     .toArray((err, data) => {
       err
         ? (console.log(err),
@@ -27,89 +26,16 @@ router.get("/5ingredientes", (req, res) => {
     });
 });
 
-//Ruta /recetas/20_minutos ofrece un listado de recetas de esa categoria
-router.get("/20minutos", (req, res) => {
+router.get("/:categoria/:nombre", (req, res) => {
+  console.log(req.params);
   req.app.locals.db
     .collection("Recetas")
-    .find({ categoria: "20minutos" })
-    .toArray((err, data) => {
-      err
-        ? (console.log(err),
-          res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : res.send({ results: data });
-    });
-});
-
-//Ruta /recetas/postres ofrece un listado de recetas de esa categoria
-router.get("/postres", (req, res) => {
-  req.app.locals.db
-    .collection("Recetas")
-    .find({ categoria: "postre" })
-    .toArray((err, data) => {
-      err
-        ? (console.log(err),
-          res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : res.send({ results: data });
-    });
-});
-
-//Ruta /recetas/vegetariano ofrece un listado de recetas de esa categoria
-router.get("/vegetariano", (req, res) => {
-  req.app.locals.db
-    .collection("Recetas")
-    .find({ categoria: "vegetariano" })
-    .toArray((err, data) => {
-      err
-        ? (console.log(err),
-          res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : res.send({ results: data });
-    });
-});
-
-//Ruta /recetas/singluten ofrece un listado de recetas de esa categoria
-router.get("/singluten", (req, res) => {
-  req.app.locals.db
-    .collection("Recetas")
-    .find({ categoria: "singluten" })
-    .toArray((err, data) => {
-      err
-        ? (console.log(err),
-          res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : res.send({ results: data });
-    });
-});
-
-//Ruta /recetas/asiatico ofrece un listado de recetas de esa categoria
-router.get("/asiatico", (req, res) => {
-  req.app.locals.db
-    .collection("Recetas")
-    .find({ categoria: "asiatico" })
-    .toArray((err, data) => {
-      err
-        ? (console.log(err),
-          res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : res.send({ results: data });
-    });
-});
-
-//Ruta /recetas/mexicano ofrece un listado de recetas de esa categoria
-router.get("/mexicano", (req, res) => {
-  req.app.locals.db
-    .collection("Recetas")
-    .find({ categoria: "mexicano" })
-    .toArray((err, data) => {
-      err
-        ? (console.log(err),
-          res.send({ mensaje: "No se ha podido acceder a la base de datos" }))
-        : res.send({ results: data });
-    });
-});
-
-//Ruta /recetas/italiano ofrece un listado de recetas de esa categoria
-router.get("/italiano", (req, res) => {
-  req.app.locals.db
-    .collection("Recetas")
-    .find({ categoria: "italiano" })
+    .find({
+      $and: [
+        { categoria: req.params.categoria },
+        { nombre: req.params.nombre },
+      ],
+    })
     .toArray((err, data) => {
       err
         ? (console.log(err),

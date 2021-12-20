@@ -201,10 +201,14 @@ app.post("/signup", (req, res) => {
             (err1, data) => {
               err1
                 ? res.send({ error: true, contenido: err1 })
-                : res.send({
+                : (console.info({
                     error: false,
                     contenido: data,
-                  });
+                  }),
+                  res.send({
+                    error: false,
+                    contenido: data,
+                  }));
             }
           );
         }

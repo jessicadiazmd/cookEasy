@@ -2,7 +2,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
 import { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 
 function Micuenta({
   user,
@@ -19,25 +19,45 @@ function Micuenta({
   const [emailRegistro, setEmailRegistro] = useState("");
   const [contraseñaRegistro, setContraseñaRegistro] = useState("");
   const [contraseñaRegistro2, setContraseñaRegistro2] = useState("");
+  const [resp, setResp] = useState({});
 
   function registrar() {
-    Axios({
+    fetch("http://localhost:3001/signup", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        nombre: nombre,
+        email: emailRegistro,
+        password: contraseñaRegistro,
+      }),
+    })
+      .then((res) => res.json())
+      .then(function (datos) {
+        console.log(datos);
+        setResp(datos);
+        console.log(resp);
+      });
+
+    /* axios({
+      method: "post",
+      url: "http://localhost:3001/signup",
       data: {
         nombre: nombre,
         email: emailRegistro,
         password: contraseñaRegistro,
       },
       withCredentials: true,
-      url: "http://localhost:3001/signup",
-    }).then((res) => {
-      console.log("eco");
-      console.log(res.data);
-    });
+    }).then(function (res) {
+      console.log(res);
+      setResp(res);
+    }); */
   }
 
   function login() {
-    Axios({
+    axios({
       method: "POST",
       data: {
         email: email,

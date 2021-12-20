@@ -13,30 +13,35 @@ import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Recetas(props) {
   /* RECETA COMPLETA EN UNA SOLA PÁGINA*/
-  console.log(props);
   if (props.full) {
-    let mostrarPasos = props.pasos.map((paso) => {
+    let pasosObj = [];
+    let ingredientesObj = [];
+    pasosObj = Object.entries(props.pasos);
+    console.log(pasosObj);
+    ingredientesObj = Object.entries(props.ingredientes);
+    console.log(ingredientesObj);
+    let mostrarPasos = pasosObj.map((paso) => {
       return (
         <div className="pasos">
-          <p className="rosa bold mright10">{paso.orden}</p>
-          <p>{paso.paso}</p>
+          <p className="rosa bold mright10">{paso[0]}</p>
+          <p>{paso[1]}</p>
         </div>
       );
     });
 
-    let ingredientes = props.ingredientes.map((ingrediente) => {
+    let ingredientes = ingredientesObj.map((ingrediente) => {
       return (
         <>
-          <p className="mright20">{ingrediente.ingrediente}</p>
+          <p className="mright20">{ingrediente[0]}</p>
         </>
       );
     });
 
-    let mostrarIngredientes = props.ingredientes.map((ingrediente) => {
+    let mostrarIngredientes = ingredientesObj.map((ingrediente) => {
       return (
         <div className="pasos">
-          <p className="bold mright10">{ingrediente.ingrediente}:</p>
-          <p>{ingrediente.cantidad}</p>
+          <p className="bold mright10">{ingrediente[0]}:</p>
+          <p>{ingrediente[1]}</p>
         </div>
       );
     });
@@ -112,7 +117,7 @@ function Recetas(props) {
             "/recetas/" +
             props.categoria +
             "/" +
-            props.nombre /* .replace(/ |[áéíóú]/g, "-") */
+            props.nombre /* .replace(/ |[áéíóú]/g, "-" */
           }
         >
           <img src={props.img} alt={props.nombre} />

@@ -6,11 +6,11 @@ import { useState, useEffect } from "react";
 import Cabecera from "./Components/Cabecera";
 import Home from "./Components/Home";
 import Recetario from "./Components/Recetario";
-import RecetarioB from "./Components/RecetarioB";
 import Recetas from "./Components/Recetas";
 import Micuenta from "./Components/Micuenta";
 import Usuario from "./Components/Usuario";
 import Footer from "./Components/Footer";
+import Receta from "./Components/Receta";
 
 /* import { Logout } from "./Logout";
 import { Feedback } from "./Feedback"; */
@@ -61,12 +61,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/recetas/:categoria"
+            path="/recetas/:categoria/"
             element={<Recetario /* data={categoria} */ />}
           />
+
           <Route
             path="/recetas/:categoria/:nombre"
-            element={<RecetarioB /* data={categoria} */ />}
+            element={<Receta /* data={categoria} */ />}
           />
 
           <Route
