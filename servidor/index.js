@@ -11,11 +11,11 @@ const crypto = require("crypto"); //función de node para encriptar
 
 const mongodb = require("mongodb");
 const MongoClient = mongodb.MongoClient;
-const MongoStore = require("connect-mongo"); //instalamos connect-mongo para guardar sesiones en mongo, en vez de en el servidor local
+const MongoStore = require("connect-mongo"); //Instalamos connect-mongo para guardar sesiones en mongo, en vez de en el servidor local
 //MongoClient es un cliente para las comunicaciones con la base de datos y MongoStore otro cliente paralelo que va a usar express para guardar las sesiones
 
 let feedback = {
-  //provee de feedback específico sobre el fallo en la autentificación
+  //Provee de feedback específico sobre el fallo en la autentificación
   middle: false,
   provider: false, // true = específico (cuando estamos con el desarrollo de la web), false = genérico (si la web ya esta en funcionamiento, por "seguridad" de datos)
   mensaje: "",
@@ -229,11 +229,11 @@ app.get("/perfil", (req, res) => {
       });
 });
 
-app.use(function (req, res, next) {
+/* app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
-});
+}); */
 
 //importar router
 let recetas = require("./recetas");

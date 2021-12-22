@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Cabecera from "./Components/Cabecera";
 import Home from "./Components/Home";
 import Recetario from "./Components/Recetario";
-import Recetas from "./Components/Recetas";
+//import Recetas from "./Components/Recetas";
 import Micuenta from "./Components/Micuenta";
 import Usuario from "./Components/Usuario";
 import Footer from "./Components/Footer";
@@ -60,15 +60,9 @@ function App() {
         <Cabecera />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/recetas/:categoria/"
-            element={<Recetario /* data={categoria} */ />}
-          />
+          <Route path="/recetas/:categoria/" element={<Recetario />} />
 
-          <Route
-            path="/recetas/:categoria/:nombre"
-            element={<Receta /* data={categoria} */ />}
-          />
+          <Route path="/recetas/:categoria/:nombre" element={<Receta />} />
 
           <Route
             path="/cuenta"

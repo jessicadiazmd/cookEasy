@@ -1,5 +1,6 @@
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
+import { Button } from "react-bootstrap";
 
 import { useState } from "react";
 import axios from "axios";
@@ -19,29 +20,10 @@ function Micuenta({
   const [emailRegistro, setEmailRegistro] = useState("");
   const [contraseñaRegistro, setContraseñaRegistro] = useState("");
   const [contraseñaRegistro2, setContraseñaRegistro2] = useState("");
-  const [resp, setResp] = useState({});
+  //const [resp, setResp] = useState({});
 
   function registrar() {
-    fetch("http://localhost:3001/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        nombre: nombre,
-        email: emailRegistro,
-        password: contraseñaRegistro,
-      }),
-    })
-      .then((res) => res.json())
-      .then(function (datos) {
-        console.log(datos);
-        setResp(datos);
-        console.log(resp);
-      });
-
-    /* axios({
+    axios({
       method: "post",
       url: "http://localhost:3001/signup",
       data: {
@@ -52,8 +34,8 @@ function Micuenta({
       withCredentials: true,
     }).then(function (res) {
       console.log(res);
-      setResp(res);
-    }); */
+      //setResp(res);
+    });
   }
 
   function login() {
@@ -95,17 +77,19 @@ function Micuenta({
               type="email"
               placeholder="Email"
               value={email}
+              autoComplete="username"
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               placeholder="Contraseña"
+              autoComplete="current-password"
               value={contraseña}
               onChange={(e) => setContraseña(e.target.value)}
             />
-            <button id="botonLogin" className="botonLogin" onClick={login}>
+            <Button id="botonLogin" className="botonLogin" onClick={login}>
               Iniciar sesión
-            </button>
+            </Button>
           </form>
         </Tab>
         <Tab eventKey="Register" title="Registrarse">
@@ -113,18 +97,21 @@ function Micuenta({
             <input
               type="text"
               placeholder="Nombre"
+              autoComplete="username"
               onChange={(e) => setNombre(e.target.value)}
               value={nombre}
             />
             <input
               type="text"
               placeholder="Email"
+              autoComplete="username"
               onChange={(e) => setEmailRegistro(e.target.value)}
               value={emailRegistro}
             />
             <input
               type="password"
               placeholder="Contraseña"
+              autoComplete="new-password"
               onChange={(e) => setContraseñaRegistro(e.target.value)}
               value={contraseñaRegistro}
             />
@@ -132,17 +119,18 @@ function Micuenta({
             <input
               type="password"
               placeholder="Repite la contraseña"
+              autoComplete="new-password"
               onChange={(e) => setContraseñaRegistro2(e.target.value)}
               value={contraseñaRegistro2}
             />
 
-            <button
+            <Button
               id="botonRegistrar"
               className="botonLogin"
               onClick={registrar}
             >
               Registrarme
-            </button>
+            </Button>
           </form>
         </Tab>
       </Tabs>
